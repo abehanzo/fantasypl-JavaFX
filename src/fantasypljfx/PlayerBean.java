@@ -16,20 +16,20 @@ import javafx.beans.property.SimpleStringProperty;
 public class PlayerBean {
     private final SimpleStringProperty firstName;
     private final SimpleStringProperty secondName;
+    private final SimpleDoubleProperty ownPercent;
+    private final SimpleStringProperty currentValue;
     private final SimpleIntegerProperty transfersIn;
     private final SimpleIntegerProperty transfersOut;
-  //  private SimpleIntegerProperty netTransfers;
-    private final SimpleDoubleProperty selectedByPercent;
-    private final SimpleStringProperty currentValue;
-   
-    public PlayerBean(String firstName, String secondName, Integer transfersIn, Integer transfersOut, Integer netTransfers, Double selectedByPercent, String currentValue) {
+    private final SimpleIntegerProperty netTransfers;
+    
+    public PlayerBean(String firstName, String secondName, String currentValue, Double ownPercent,Integer transfersIn, Integer transfersOut, Integer netTransfers) {
         this.firstName = new SimpleStringProperty(firstName);
         this.secondName =new SimpleStringProperty(secondName);
+        this.ownPercent = new SimpleDoubleProperty(ownPercent);
+        this.currentValue = new SimpleStringProperty(currentValue);
         this.transfersIn = new SimpleIntegerProperty(transfersIn);
         this.transfersOut = new SimpleIntegerProperty(transfersOut);
-        //this.netTransfers = netTransfers;
-        this.selectedByPercent = new SimpleDoubleProperty(selectedByPercent);
-        this.currentValue = new SimpleStringProperty(currentValue);
+        this.netTransfers = new SimpleIntegerProperty(netTransfers);
     }
      public String getFirstName() {
         return firstName.get();
@@ -39,6 +39,13 @@ public class PlayerBean {
         return secondName.get();
     }
 
+    public Double getOwnPercent() {
+        return ownPercent.get();
+    }
+
+    public String getCurrentValue() {
+        return currentValue.get();
+    }
     public int getTransfersIn() {
         return transfersIn.get();
     }
@@ -47,16 +54,9 @@ public class PlayerBean {
         return transfersOut.get();
     }
 
-    /*public SimpleIntegerProperty getNetTransfers() {
-        return netTransfers;
-    }*/
-
-    public double getSelectedByPercent() {
-        return selectedByPercent.get();
+    public int getNetTransfers() {
+        return netTransfers.get();
     }
 
-    public String getCurrentValue() {
-        return currentValue.get();
-    }
    
 }

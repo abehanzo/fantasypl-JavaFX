@@ -9,7 +9,10 @@ package fantasypljfx;
  *
  * @author Abraham
  */
+import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -26,9 +29,12 @@ public class MainController implements Initializable {
     
     @FXML
     private TableColumn<PlayerBean, String> playerName;
+    
+    @FXML
+    private TableColumn<PlayerBean, String> currentValue;
 
     @FXML
-    private TableColumn<PlayerBean, String> ownPercent;
+    private TableColumn<PlayerBean, Double> ownPercent;
 
     @FXML
     private TableColumn<PlayerBean, Integer> transfersIn;
@@ -39,14 +45,16 @@ public class MainController implements Initializable {
     @FXML
     private TableColumn<PlayerBean, Integer> netTransfers;
 
-    @FXML
-    private TableColumn<PlayerBean, Integer> currentValue;
-   
     
-    final ObservableList<PlayerBean> playersData = FXCollections.observableArrayList(new PlayerBean("Mesut","Ozil",4000,5000,1000,40.2,"9.5"),
-            new PlayerBean("Mesut","Ozil2",4000,5000,1000,40.2,"9.5"),
-            new PlayerBean("Mesut","Ozil3",4000,5000,1000,40.2,"9.5"),
-            new PlayerBean("Mesut","Ozil4",4000,5000,1000,40.2,"9.5"));
+    final ArrayList<PlayerBean> Players;
+    final ObservableList<PlayerBean> playersData; 
+    public MainController() throws IOException {
+        this.Players = new ArrayList(jsonPull.extractData());
+        this.playersData = FXCollections.observableArrayList(Players);
+        
+    }
+    
+    
     
     @Override
     public void initialize(URL location, ResourceBundle resources){
