@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="fantasypljfx.jnlp">
+  <information>
+    <title>fantasypljfx</title>
+    <vendor>Abraham</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="fantasypljfx.jar" size="4566" download="eager" />
+    <jar href="lib\json-20140107.jar" size="64952" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="fantasypljfx" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="fantasypljfx.MainActivity"  name="fantasypljfx" />
+  <update check="always"/>
+</jnlp>
