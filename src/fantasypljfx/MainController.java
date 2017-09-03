@@ -12,7 +12,6 @@ package fantasypljfx;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -58,7 +57,7 @@ public class MainController implements Initializable {
     
     @Override
     public void initialize(URL location, ResourceBundle resources){
-        playerName.setCellValueFactory(new PropertyValueFactory<>("secondName"));
+        playerName.setCellValueFactory(new PropertyValueFactory<>("name"));
         ownPercent.setCellValueFactory(new PropertyValueFactory<>("ownPercent"));
         transfersIn.setCellValueFactory(new PropertyValueFactory<>("transfersIn"));
         transfersOut.setCellValueFactory(new PropertyValueFactory<>("transfersOut"));

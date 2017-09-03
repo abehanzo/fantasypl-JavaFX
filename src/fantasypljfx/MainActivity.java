@@ -23,8 +23,6 @@ public class MainActivity extends Application {
         
         
         AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("MainLayout.fxml"));
-       
-        
         Scene scene = new Scene(anchorPane);
         primaryStage.setScene(scene);
         primaryStage.show();

@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="fantasypljfx.jar" size="7609" download="eager" />
+    <jar href="fantasypljfx.jar" size="7049" download="eager" />
     <jar href="lib\json-20140107.jar" size="64952" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="fantasypljfx" >
